@@ -1,0 +1,75 @@
+spring:
+  datasource:
+    hikari:
+      pool-name: CustomerServicePool
+      driver-class-name: oracle.jdbc.OracleDriver
+      minimum-idle: 4
+      maximum-pool-size: 16
+      idle-timeout: 43200000
+      max-lifetime: 86400000
+      connection-test-query: select 1 from dual
+      register-mbeans: false
+      auto-commit: false
+    url: jdbc:oracle:thin:@//localhost:1521/ORCLPDB
+    username: MSL_CUSTOMER
+    password: 123456
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: false
+        cache:
+          use_second_level_cache: true
+          use_query_cache: true
+          region:
+            factory_class: org.redisson.hibernate.RedissonRegionFactory
+          region_prefix: ${dev.microservices.lab.serviceName}
+          redisson:
+            customer-service:
+              CurrentDataRegion:
+                expiration:
+                  time_to_live: 300000 # 5 minutes
+                  max_idle_time: 120000 # 2 minutes
+                eviction:
+                  policy: LRU
+                  max_entries: 2000000000
+                  time_to_live: 6000
+
+          cache_default_expiration: 300000
+        session.events.log.LOG_QUERIES_SLOWER_THAN_MS: 100
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+  aop:
+    proxy-target-class: false
+  data:
+    redis:
+      client-name: customer-service-client
+      client-type: lettuce
+      connect-timeout: PT5S
+      database: 0
+      host: localhost
+      port: 6379
+      lettuce:
+        pool:
+          enabled: true
+          min-idle: 2
+          max-active: 8
+          max-idle: 4
+          time-between-eviction-runs: PT30M
+      timeout: PT3S
+      ssl:
+        enabled: false
+dev:
+  microservices:
+    lab:
+      node-id: 1
+      ignored-path-patterns:
+      serviceName: customer-service
+      logging:
+        non-logged-paths:
+        ignored-headers:
+      search:
+        page-size: 10

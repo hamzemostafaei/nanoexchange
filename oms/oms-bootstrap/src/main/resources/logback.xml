@@ -1,0 +1,50 @@
+<configuration debug="true" scan="true" scanPeriod="5 seconds">
+
+    <property name="APP_HOME" value="./customer-service/logs"/>
+    <property name="APP_NAME" value="customer-service"/>
+
+    <include resource="logback-common.xml"/>
+
+    <logger name="org.hibernate.SQL" additivity="false">
+        <level value="trace"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.hibernate.orm.jdbc.bind" additivity="false">
+        <level value="trace"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.hibernate.orm.jdbc.extract" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.hibernate.SQL_SLOW" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="org.redisson" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.redisson.connection.DNSMonitor" additivity="false">
+        <level value="off"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.redisson.command.RedisExecutor" additivity="false">
+        <level value="off"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.redisson.MapCacheEvictionTask" additivity="false">
+        <level value="off"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.redisson.eviction.MapCacheEvictionTask" additivity="false">
+        <level value="off"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="customer-service" level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+</configuration>
