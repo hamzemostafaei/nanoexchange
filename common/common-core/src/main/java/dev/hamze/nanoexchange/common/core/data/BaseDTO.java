@@ -1,6 +1,6 @@
 package dev.hamze.nanoexchange.common.core.data;
 
-import dev.microservices.lab.common.utility.JsonSerializationUtil;
+import dev.hamze.nanoexchange.common.utility.JsonSerializationUtil;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;

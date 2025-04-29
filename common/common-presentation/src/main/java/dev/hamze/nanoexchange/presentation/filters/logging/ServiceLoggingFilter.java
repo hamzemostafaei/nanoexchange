@@ -1,8 +1,8 @@
 package dev.hamze.nanoexchange.presentation.filters.logging;
 
-import dev.microservices.lab.app.config.CommonConfigData;
-import dev.microservices.lab.common.utility.LoggingUtil;
-import dev.microservices.lab.common.utility.SnowFlakeUniqueIDGenerator;
+import dev.hamze.nanoexchange.app.config.CommonConfigData;
+import dev.hamze.nanoexchange.common.utility.LoggingUtil;
+import dev.hamze.nanoexchange.common.utility.SnowFlakeUniqueIDGenerator;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -16,8 +16,9 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
-import static dev.microservices.lab.presentation.WebApplicationConstants.CORRELATION_ID_HEADER_KEY;
-import static dev.microservices.lab.presentation.WebApplicationConstants.REQUEST_ID_HEADER_KEY;
+import static dev.hamze.nanoexchange.presentation.WebApplicationConstants.CORRELATION_ID_HEADER_KEY;
+import static dev.hamze.nanoexchange.presentation.WebApplicationConstants.REQUEST_ID_HEADER_KEY;
+
 
 @Slf4j
 @Component

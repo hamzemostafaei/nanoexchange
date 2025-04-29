@@ -1,6 +1,6 @@
 package dev.hamze.nanoexchange.presentation.api.data;
 
-import dev.microservices.lab.common.core.data.BaseDTO;
+import dev.hamze.nanoexchange.common.core.data.BaseDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,7 @@
 package dev.hamze.nanoexchange.presentation.api.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.microservices.lab.common.core.data.ErrorDTO;
+import dev.hamze.nanoexchange.common.core.data.ErrorDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

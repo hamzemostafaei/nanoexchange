@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
 
-@ConfigurationProperties(prefix = "dev.microservices.lab")
+@ConfigurationProperties(prefix = "dev.hamze.nanoexchange")
 public record CommonConfigData(Integer nodeId,
                                List<String> ignoredPathPatterns,
                                String serviceName) {

@@ -1,8 +1,8 @@
 package dev.hamze.nanoexchange.presentation.handler;
 
-import dev.microservices.lab.common.core.data.ErrorCodeEnum;
-import dev.microservices.lab.common.core.data.ErrorDTO;
-import dev.microservices.lab.presentation.api.data.BaseEdgeResponseDTO;
+import dev.hamze.nanoexchange.common.core.data.ErrorCodeEnum;
+import dev.hamze.nanoexchange.common.core.data.ErrorDTO;
+import dev.hamze.nanoexchange.presentation.api.data.BaseEdgeResponseDTO;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Path;
 import jakarta.validation.ValidationException;

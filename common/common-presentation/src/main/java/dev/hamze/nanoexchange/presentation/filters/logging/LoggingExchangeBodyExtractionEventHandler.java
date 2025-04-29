@@ -1,10 +1,10 @@
 package dev.hamze.nanoexchange.presentation.filters.logging;
 
-import dev.microservices.lab.app.config.CommonConfigData;
-import dev.microservices.lab.app.config.LoggingConfigData;
-import dev.microservices.lab.common.utility.LoggingUtil;
-import dev.microservices.lab.common.utility.WebUtil;
-import dev.microservices.lab.presentation.filters.body.extraction.IExchangeBodyExtractionEventHandler;
+import dev.hamze.nanoexchange.app.config.CommonConfigData;
+import dev.hamze.nanoexchange.app.config.LoggingConfigData;
+import dev.hamze.nanoexchange.common.utility.LoggingUtil;
+import dev.hamze.nanoexchange.common.utility.WebUtil;
+import dev.hamze.nanoexchange.presentation.filters.body.extraction.IExchangeBodyExtractionEventHandler;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.FilterChain;
 import lombok.RequiredArgsConstructor;

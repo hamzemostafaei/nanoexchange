@@ -10,11 +10,15 @@
     </parent>
 
     <artifactId>common</artifactId>
-
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common-bootstrap</module>
+        <module>common-config-data</module>
+        <module>common-core</module>
+        <module>common-data-access</module>
+        <module>common-domain</module>
+        <module>common-presentation</module>
+        <module>common-utility</module>
+    </modules>
 
 </project>

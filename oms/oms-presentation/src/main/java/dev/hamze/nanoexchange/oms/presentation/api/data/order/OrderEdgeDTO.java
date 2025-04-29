@@ -1,4 +1,6 @@
 package dev.hamze.nanoexchange.oms.presentation.api.data.order;
 
-public class OrderEdgeDTO {
+import dev.hamze.nanoexchange.common.core.data.BaseDTO;
+
+public class OrderEdgeDTO extends BaseDTO {
 }

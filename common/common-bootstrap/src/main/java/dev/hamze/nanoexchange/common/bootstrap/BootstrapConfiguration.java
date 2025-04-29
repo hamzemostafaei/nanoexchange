@@ -6,6 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties
-@ConfigurationPropertiesScan(basePackages = "dev.microservices.lab")
+@ConfigurationPropertiesScan(basePackages = "dev.hamze.nanoexchange")
 public class BootstrapConfiguration {
 }

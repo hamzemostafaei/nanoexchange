@@ -1,9 +1,9 @@
 package dev.hamze.nanoexchange.presentation.filters.body.extraction;
 
-import dev.microservices.lab.app.config.CommonConfigData;
-import dev.microservices.lab.common.utility.LoggingUtil;
-import dev.microservices.lab.common.utility.ReflectionUtil;
-import dev.microservices.lab.common.utility.WebUtil;
+import dev.hamze.nanoexchange.app.config.CommonConfigData;
+import dev.hamze.nanoexchange.common.utility.LoggingUtil;
+import dev.hamze.nanoexchange.common.utility.ReflectionUtil;
+import dev.hamze.nanoexchange.common.utility.WebUtil;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,7 +19,8 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
 import java.io.IOException;
 import java.util.List;
 
-import static dev.microservices.lab.presentation.WebApplicationConstants.*;
+import static dev.hamze.nanoexchange.presentation.WebApplicationConstants.*;
+
 
 @Slf4j
 @Component
@@ -38,7 +39,7 @@ public class BodyExtractionHTTPFilter implements Filter {
             throws IOException, ServletException {
 
         if (request instanceof HttpServletRequest httpRequest &&
-            response instanceof HttpServletResponse httpResponse) {
+                response instanceof HttpServletResponse httpResponse) {
 
             long startTime = System.nanoTime();
 
@@ -78,8 +79,8 @@ public class BodyExtractionHTTPFilter implements Filter {
             chain.doFilter(effectiveRequest, effectiveResponse);
 
             if (wrappedResponse != null) {
-                wrappedResponse.addHeader(CORRELATION_ID_HEADER_KEY,LoggingUtil.getCorrelationIdContext());
-                wrappedResponse.addHeader(REQUEST_ID_HEADER_KEY,LoggingUtil.getRequestIdFromContext());
+                wrappedResponse.addHeader(CORRELATION_ID_HEADER_KEY, LoggingUtil.getCorrelationIdContext());
+                wrappedResponse.addHeader(REQUEST_ID_HEADER_KEY, LoggingUtil.getRequestIdFromContext());
                 wrappedResponse.addHeader(REQUEST_DATE_HEADER_KEY, String.valueOf(LoggingUtil.getRequestDateFromContext()));
                 if (eventHandlers != null) {
                     for (IExchangeBodyExtractionEventHandler eventHandler : eventHandlers) {

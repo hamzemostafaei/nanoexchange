@@ -40,7 +40,7 @@
         </rollingPolicy>
     </appender>
 
-    <logger name="com.microservices.lab" level="info" additivity="false">
+    <logger name="dev.hamze" level="info" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 
