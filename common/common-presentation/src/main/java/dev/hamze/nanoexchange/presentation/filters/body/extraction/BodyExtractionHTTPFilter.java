@@ -63,7 +63,7 @@ public class BodyExtractionHTTPFilter implements Filter {
                             "HTTP request body on path [{}] is extracted", path);
                 }
 
-                wrappedRequest = new BodyExtractionRequestWrapper(httpRequest);
+                wrappedRequest = new ContentCachingRequestWrapper(httpRequest);
                 wrappedResponse = new ContentCachingResponseWrapper(httpResponse);
 
                 effectiveRequest = wrappedRequest;
